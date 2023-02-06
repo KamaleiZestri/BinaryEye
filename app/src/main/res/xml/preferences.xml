@@ -57,6 +57,11 @@
 			android:defaultValue="tone_prop_beep"/>
 		<android.support.v7.preference.SwitchPreferenceCompat
 			android:defaultValue="true"
+			android:key="beep_error"
+			android:title="@string/beep_error"
+			android:summary="@string/beep_error_summary"/>
+		<android.support.v7.preference.SwitchPreferenceCompat
+			android:defaultValue="true"
 			android:key="use_history"
 			android:title="@string/use_history"
 			android:summary="@string/use_history_summary"/>

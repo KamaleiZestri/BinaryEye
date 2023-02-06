@@ -100,6 +100,11 @@ class Preferences {
 			apply(BEEP_TONE_NAME, value)
 			field = value
 		}
+	var beepError = true
+		set(value) {
+			apply(BEEP_ERROR, value)
+			field = value
+		}
 	var useHistory = false
 		set(value) {
 			apply(USE_HISTORY, value)
@@ -219,6 +224,7 @@ class Preferences {
 		preferences.getString(BEEP_TONE_NAME, beepToneName)?.also {
 			beepToneName = it
 		}
+		beepError = preferences.getBoolean(BEEP_ERROR, beepError)
 		useHistory = preferences.getBoolean(USE_HISTORY, useHistory)
 		ignoreConsecutiveDuplicates = preferences.getBoolean(
 			IGNORE_CONSECUTIVE_DUPLICATES,
@@ -312,6 +318,7 @@ class Preferences {
 		private const val VIBRATE = "vibrate"
 		private const val BEEP = "beep"
 		private const val BEEP_TONE_NAME = "beep_tone_name"
+		private const val BEEP_ERROR ="beep_error"
 		private const val USE_HISTORY = "use_history"
 		private const val IGNORE_CONSECUTIVE_DUPLICATES = "ignore_consecutive_duplicates"
 		private const val OPEN_IMMEDIATELY = "open_immediately"
